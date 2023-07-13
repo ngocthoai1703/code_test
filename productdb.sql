@@ -1,15 +1,45 @@
-# Advance_Shopping_cart
-Advanced Shopping Cart Tutorial With Php and MySqli Database
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th7 13, 2023 lúc 05:36 PM
+-- Phiên bản máy phục vụ: 10.4.28-MariaDB
+-- Phiên bản PHP: 8.2.4
 
-DB diagram
-![Alt text](./Advance_Shopping_cart/upload/db.png)
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-Before you execute this project make sure you insert values in the database.
-to insert values in the database just type this command.
 
-Use xampp to run 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-```sql
+--
+-- Cơ sở dữ liệu: `productdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `producttb`
+--
+
+CREATE TABLE `producttb` (
+  `id` int(11) NOT NULL,
+  `product_name` varchar(25) NOT NULL,
+  `product_price` float DEFAULT NULL,
+  `product_image` varchar(100) DEFAULT NULL,
+  `product_describe` varchar(200) DEFAULT NULL,
+  `product_color` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `producttb`
+--
+
 INSERT INTO `producttb` (`id`, `product_name`, `product_price`, `product_image`, `product_describe`, `product_color`) VALUES
 (1, 'Nike Air Zoom Pegasus 36', 108.97, './upload/img1.png', 'The iconic Nike Air Zoom Pegasus 36 offers more cooling and mesh that targets breathability across high-heat areas. A slimmer heel collar and tongue reduce bulk, while exposed cables give you a snug f', '#e1e7ed'),
 (2, 'Nike Air Zoom Pegasus 36 ', 89.97, './upload/img2.png', 'The Nike Air Zoom Pegasus 36 Shield gets updated to conquer wet routes. A water-repellent upper combines with an outsole that helps create grip on wet surfaces, letting you run in confidence despite t', '#4D317F'),
@@ -21,9 +51,28 @@ INSERT INTO `producttb` (`id`, `product_name`, `product_price`, `product_image`,
 (8, 'Nike Renew Ride', 60.97, './upload/img8.png', 'The Nike Renew Ride helps keep the committed runner moving with plush cushioning. Firm support at the outsole helps you maintain stability no matter the distance.', '#B50320'),
 (9, 'Nike Vaporfly 4% Flyknit', 187.97, './upload/img9.png', 'Built to meet the exacting needs of world-class marathoners, Nike Vaporfly 4% Flyknit is designed for record-breaking speed. The Flyknit upper delivers breathable support, while the responsive foam an', '#3569A1'),
 (10, 'Nike Zoom Fly 3 Premium', 160, './upload/img10.png', 'Inspired by the Vaporfly, the Nike Zoom Fly 3 Premium gives distance runners race-day comfort and durability. The power of a carbon fiber plate keeps you in the running mile after mile.', '#54D4C9');
-```
 
-Ones you insert these values just execute your application.
-that's it.
+--
+-- Chỉ mục cho các bảng đã đổ
+--
 
-Thank you.
+--
+-- Chỉ mục cho bảng `producttb`
+--
+ALTER TABLE `producttb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `producttb`
+--
+ALTER TABLE `producttb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
